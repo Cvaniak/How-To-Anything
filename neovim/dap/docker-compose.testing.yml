@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app-name:
+    ports:
+    - '33:33'
+    - 8000:8000
+    - '22:22'
+    - 5678:5678
+    volumes:
+    - .:/testing
+    - .:/home/cvaniak/Code/Cvaniak/how_to_anything/neovim/dap
+    command: ./run-test.sh
+    security_opt: seccomp:unconfined
+    cap_add: SYS_PTRACE
