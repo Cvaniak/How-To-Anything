@@ -1,0 +1,12 @@
+[importlinter]
+root_packages =
+    project_name
+    tests
+
+[importlinter:contract:1]
+name = Importing from tests or is forbidden in production code
+type = forbidden
+source_modules =
+    project_name
+forbidden_modules =
+    tests

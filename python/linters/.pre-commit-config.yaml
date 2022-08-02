@@ -1,0 +1,75 @@
+default_language_version:
+  python: python3.9
+
+fail_fast: true
+
+repos:
+  - repo: https://github.com/sondrelg/pep585-upgrade
+    rev: 'v1'
+    hooks:
+      - id: upgrade-type-hints
+
+  - repo: https://github.com/PyCQA/isort
+    rev: '5.10.0'
+    hooks:
+      - id: isort
+
+  # Only for removing unused imports
+  - repo: https://github.com/myint/autoflake
+    rev: "v1.4"
+    hooks:
+      - id: autoflake
+        args:
+          - --in-place
+          - --remove-all-unused-imports
+          - --ignore-init-module-imports
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        args: [--line-length, "120", "."]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-builtin-literals
+
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.9.0
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: '3.9.2'
+    hooks:
+    -   id: flake8
+        # Line length is longer than in black, because black does not break long strings
+        args: [
+            "--max-line-length=200",
+        ]
+
+  - repo: local
+    hooks:
+      - id: import-linter
+        name: import linter contracts
+        language: python
+        entry: lint-imports
+        pass_filenames: false
+        types:
+          - python
+        files: |
+          (?x)^(
+               project_name/.*|
+               tests/.*
+          )$
+        additional_dependencies:
+          - import-linter
