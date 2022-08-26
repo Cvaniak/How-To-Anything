@@ -30,3 +30,8 @@ So documents with help created after countless hours of research to fix bug or s
 | --- | --- |
 | [Accelerometer](microcontrollers/sensors/accelerometers/keyes_MMA8452Q/README.md) | Working library for accelerometer |
 
+### Linux
+| What | Description of document |
+| --- | --- |
+| [Printer](linux/manjaro/printer/README.md) | Install printer and scanner |
+
