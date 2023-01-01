@@ -1,11 +1,12 @@
-https://botland.com.pl/moduly-wifi-i-bt-esp32/21080-qt-py-esp32-s2-plytka-rozwojowa-z-wifi-i-zlaczem-antenowym-ufl-stemma-qtqwiic-adafruit-5348.html
-https://kamami.pl/en/esp32/1178261-adafruit-qt-py-esp32-s2-board-with-the-esp32-s2-wifi-module-5325.html
-https://learn.adafruit.com/adafruit-qt-py-esp32-c3-wifi-dev-board/pinouts
+[Botland](https://botland.com.pl/moduly-wifi-i-bt-esp32/21080-qt-py-esp32-s2-plytka-rozwojowa-z-wifi-i-zlaczem-antenowym-ufl-stemma-qtqwiic-adafruit-5348.html)  
+[Kamami](https://kamami.pl/en/esp32/1178261-adafruit-qt-py-esp32-s2-board-with-the-esp32-s2-wifi-module-5325.html)  
+[Adafruit](https://learn.adafruit.com/adafruit-qt-py-esp32-s2)  
 
 <img src="./qtpy_esp32_s2_back.jpg" width="120"/>
 <img src="./qtpy_esp32_s2_front.jpg" width="120"/>
 
 # PlatformIO setup
+
 ```ini
 [env:qtpy-esp32-s2]
 platform = 
