@@ -1,14 +1,45 @@
 version: '3'
 services:
-  app-name:
+  beha-api:
+    container_name: beha-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: beha-api
+    restart: unless-stopped
+    depends_on:
+    - postgres
+    - simple-file-server
+    volumes:
+    - ./beha_backend:/code/beha_backend
+    - ./media:/code/media
+    - .:/home/cvaniak/Code/Cvaniak/how_to_anything/neovim/dap
+    env_file:
+    - .envs/.local.env
+    - .envs/.postgres.env
     ports:
-    - '33:33'
     - 8000:8000
     - '22:22'
     - 5678:5678
-    volumes:
-    - .:/testing
-    - .:/home/cvaniak/Code/Cvaniak/how_to_anything/neovim/dap
     command: ./run-test.sh
     security_opt: seccomp:unconfined
     cap_add: SYS_PTRACE
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    restart: unless-stopped
+    env_file:
+    - .envs/.postgres.env
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+  simple-file-server:
+    container_name: simple-file-server
+    image: nginx
+    ports:
+    - 4000:80
+    volumes:
+    - ./media:/usr/share/nginx/html
+volumes:
+  postgres_data: {}

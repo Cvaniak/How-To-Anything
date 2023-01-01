@@ -14,8 +14,8 @@
             "host": "0.0.0.0",
             "pathMappings": [
                 {
-                    "localRoot": "local/path/to/project",
-                    "remoteRoot": "local/path/to/project"
+                    "localRoot": "/home/cvaniak/Code/Cvaniak/how_to_anything/neovim/dap",
+                    "remoteRoot": "/home/cvaniak/Code/Cvaniak/how_to_anything/neovim/dap"
                 }
             ],
             "logToFile": true,

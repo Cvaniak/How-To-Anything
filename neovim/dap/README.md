@@ -1,6 +1,8 @@
 # How To Debug App In **Docker** (or remote server)
+
 To debug app in docker (or remote server) you will need to run debugpy localy and on target machine.
 You need to:
+
 * Install debugpy localy
 * Install debugpy on remote machine
 * Expose ports for connection
@@ -83,6 +85,7 @@ require("dapui").setup({
 )
 EOF
 ```
+
 </details>
 
 <details>
@@ -137,28 +140,35 @@ EOF
 
 </details>
 
-
 ## dap-launch.json
+
 *nvim-dap* supports `launch.json` file that typically exists in `.vscode/` directory.
 I couldn't find any explicite example but it look like it can be used in root directory as `dap-launch.json` (and it works).
+
 ### configurations
+
 It should be set as `remote` and `attach`.
 In theory in `pathMappings` you should be able to *map* your local path with remote one.
+
 ```json
 {
-	"pathMappings":  [
-		{
-			"localRoot": "/local/path/to/project",
-			"remoteRoot": "/remote/path/to/project",
-		}
-	]
+ "pathMappings":  [
+  {
+   "localRoot": "/local/path/to/project",
+   "remoteRoot": "/remote/path/to/project",
+  }
+ ]
 }
 ```
+
 If this work for you then great, but if not here is hacky solution:
+
 ### pathMappings hacky fix
+
 I had a lot of trouble with that (even when i mapped and everything was working correctly my breakpoints where always pointing to file with my local path but on remote machine).
 So as a result I decided to configure my testing docker such my local path is mapped with target remote directory (so this one that I will use in my *production* Dockerfile)
 but also with exactly same path in remote (so both remote paths should point to the same files).
+
 ```yaml
 services:
     app-name:
@@ -166,33 +176,40 @@ services:
             - /local/path/to/project:/code/app
             - /local/path/to/project:/local/path/to/project # This is not an error, both paths should be same
 ```
-This way even if my local debugpy say that the breakpoint is in the file in path from my local machine it is correctly undrestand by remote machine. 
+
+This way even if my local debugpy say that the breakpoint is in the file in path from my local machine it is correctly undrestand by remote machine.
 
 # Script to create files for testing docker
+
 ```bash
 python3 append_docker_file.py app_name_in_docker_compose
 ```
+
 For my own usage I created script that takes your existing `docker-compose.yml` and filled with necessary changes.
 It requires you to start this code from root of your project. You should also have `docker-compose.yml` and `run-test.sh`
 which can look like:
+
 ```bash
 python -m pip install debugpy #install debugpy
 # start debugpy   save logs to file      listen on 0.0.0.0 (important) start your server (can be uvicorn) with only one worker 
 python -m debugpy --log-to "/temp/logs/" --listen 0.0.0.0:5678 -m uvicorn app-name.app:app --reload --port 8000 --host 0.0.0.0 --workers 1
 ```
-It creates `docker-compose.testing.yml` and `dap-launch.json`. 
+
+It creates `docker-compose.testing.yml` and `dap-launch.json`.
 
 # Start debuging docker
+
 To start debug session you can run:
+
 ```bash
 docker-compose -f ./docker-compose.yml -f ./docker-compose.testing.yml up --build -d
 ```
+
 It takes your existing `docker-compose.yml` and overwrites volumes (mostly because now in docker-compose you cant extend list of values)
 In **Nvim** try to "attach to the remote" (`require"debugHelper".attachToRemote()`) and you should be able to connect with `0.0.0.0` and port `5678`.
 
 ### Some notes for later
-https://github.com/mfussenegger/nvim-dap/wiki/Local-and-Remote-Debugging-with-Docker#Docker-Security-Settings
+<https://github.com/mfussenegger/nvim-dap/wiki/Local-and-Remote-Debugging-with-Docker#Docker-Security-Settings>
 
 ssh -L localhost:${your_debug_port}:${remote_docker_host}:${your_debug_port} ${remote_docker_host} tail -f /dev/null
 python3 -m debugpy --listen 0.0.0.0:5678 --pid $(pgrep -nf fastapi_test)
-

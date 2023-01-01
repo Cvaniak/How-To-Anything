@@ -1,10 +1,44 @@
 version: '3'
 
 services:
-  app-name:
-    ports:
-      - "33:33"
-      - "8000:8000"
+  beha-api:
+    container_name: beha-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: beha-api
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - simple-file-server
     volumes:
-      - .:/testing
+      - ./beha_backend:/code/beha_backend
+      - ./media:/code/media  # TODO: Remove after replacing simple-file-server with other service
+    env_file:
+      - .envs/.local.env
+      - .envs/.postgres.env
+    ports:
+      - "8000:8000"
     command: /scripts/run-dev.sh
+
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    restart: unless-stopped
+    env_file:
+      - .envs/.postgres.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  simple-file-server:
+    container_name: simple-file-server
+    image: nginx
+    ports:
+      - 4000:80
+    volumes:
+      - ./media:/usr/share/nginx/html
+
+volumes:
+  postgres_data: {}
