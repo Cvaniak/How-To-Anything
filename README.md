@@ -45,9 +45,10 @@ setup plugin/tool.
 
 ## Linux
 
-| What | Description of document |
-| --- | --- |
-| [Printer](linux/manjaro/printer/README.md) | Install printer and scanner |
+| What                                              | Description of document              |
+| ------------------------------------------------- | ------------------------------------ |
+| [Printer](linux/manjaro/printer/README.md)        | Install printer and scanner          |
+| [Dual Output](linux/manjaro/dual_output/README.md) | How to enable dual output on Manjaro |
 
 ## Python
 
