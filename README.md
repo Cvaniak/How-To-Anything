@@ -9,11 +9,12 @@ setup plugin/tool.
 
 ## Neovim
 
-| Tool / Plugin | Description of document |
-| --- | --- |
-| [DAP](neovim/dap/README.md) | How to setup **nvim-dap** to debug app in **Docker** (for python) |
-| [Unity3D](neovim/unity3d/README.md) | How to setup **Neovim** to work with **Unity3D** like IDE |
-| [Pyright](neovim/lsp/pyright/README.md) | How to setup Pyright for nvim |
+| Tool / Plugin                              | Description of document                                           |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| [DAP](neovim/dap/README.md)                | How to setup **nvim-dap** to debug app in **Docker** (for python) |
+| [Unity3D](neovim/unity3d/README.md)        | How to setup **Neovim** to work with **Unity3D** like IDE         |
+| [Pyright](neovim/lsp/pyright/README.md)    | How to setup Pyright for nvim                                     |
+| [Spell Check](neovim/spellcheck/README.md) | How to config spell check in NeoVim                               |
 
 ## Microcontrollers
 
@@ -33,14 +34,14 @@ setup plugin/tool.
 
 ### PlatformIO
 
-| File | Description of document |
-| --- | --- |
+| File                                                     | Description of document                    |
+| -------------------------------------------------------- | ------------------------------------------ |
 | [Makefile](microcontrollers/platformio/Makefile.example) | Example of makefile for platformio project |
 
 ### Sensors
 
-| Sensor | Description of document |
-| --- | --- |
+| Sensor                                                                            | Description of document           |
+| --------------------------------------------------------------------------------- | --------------------------------- |
 | [Accelerometer](microcontrollers/sensors/accelerometers/keyes_MMA8452Q/README.md) | Working library for accelerometer |
 
 ## Linux
@@ -52,6 +53,6 @@ setup plugin/tool.
 
 ## Python
 
-| What | Description of document |
-| --- | --- |
+| What                                | Description of document                |
+| ----------------------------------- | -------------------------------------- |
 | [Linters](python/linters/README.md) | Files with setup for linting in python |
