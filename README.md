@@ -19,15 +19,17 @@ setup plugin/tool.
 
 ### ESP
 
-| Microcontroller | Description of document |
-| --- | --- |
-| [Esp32 Fire Beetle V4.0](microcontrollers/esp/esp32_fire_beetle/README.md) | |
-| [Esp32s Nodemcu V1.1](microcontrollers/esp/esp32s_nodemcu_v1.1/README.md) | |
-| [QtPy Esp32 S2](microcontrollers/esp/qtpy_esp32_s2/README.md) | |
-| [QtPy Esp32 C3](microcontrollers/esp/qtpy_esp32_c3/README.md) | |
-| [Esp8266 new Nodemcu V3](microcontrollers/esp/esp8266_new_nodemcu_v3/README.md) | |
-| [Esp8266 HW628](microcontrollers/esp/esp8266_hw628/README.md) | |
-| [Esp8266 Fire Beetle](/microcontrollers/esp/esp8266_fire_beetle/README.md) | |
+| Microcontroller                                                                 | Description of document |
+| ------------------------------------------------------------------------------- | ----------------------- |
+| [Esp32 Fire Beetle V4.0](microcontrollers/esp/esp32_fire_beetle/README.md)      |                         |
+| [Esp32s Nodemcu V1.1](microcontrollers/esp/esp32s_nodemcu_v1.1/README.md)       |                         |
+| [QtPy Esp32 S2](microcontrollers/esp/qtpy_esp32_s2/README.md)                   |                         |
+| [QtPy Esp32 C3](microcontrollers/esp/qtpy_esp32_c3/README.md)                   |                         |
+| [Esp8266 new Nodemcu V3](microcontrollers/esp/esp8266_new_nodemcu_v3/README.md) |                         |
+| [Esp8266 HW628](microcontrollers/esp/esp8266_hw628/README.md)                   |                         |
+| [Esp8266 Fire Beetle](/microcontrollers/esp/esp8266_fire_beetle/README.md)      |                         |
+| [Seeed Xiao ESP32 C3](microcontrollers/esp/seeed_xiao_esp32c3/README.md)        |                         |
+| [Seeed Xiao ESP32 S3](microcontrollers/esp/seeed_xiao_esp32s3/README.md)        |                         |
 
 ### PlatformIO
 
