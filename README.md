@@ -56,3 +56,8 @@ setup plugin/tool.
 | What                                | Description of document                |
 | ----------------------------------- | -------------------------------------- |
 | [Linters](python/linters/README.md) | Files with setup for linting in python |
+## Fritzing
+
+| What                             | Description of document    |
+| -------------------------------- | -------------------------- |
+| [Fritzing](./fritzing/README.md) | How to start with fritzing |
