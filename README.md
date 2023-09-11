@@ -9,12 +9,13 @@ setup plugin/tool.
 
 ## Neovim
 
-| Tool / Plugin                              | Description of document                                           |
-| ------------------------------------------ | ----------------------------------------------------------------- |
-| [DAP](neovim/dap/README.md)                | How to setup **nvim-dap** to debug app in **Docker** (for python) |
-| [Unity3D](neovim/unity3d/README.md)        | How to setup **Neovim** to work with **Unity3D** like IDE         |
-| [Pyright](neovim/lsp/pyright/README.md)    | How to setup Pyright for nvim                                     |
-| [Spell Check](neovim/spellcheck/README.md) | How to config spell check in NeoVim                               |
+| Tool / Plugin                                | Description of document                                           |
+| -------------------------------------------- | ----------------------------------------------------------------- |
+| [DAP](./neovim/dap/README.md)                | How to setup **nvim-dap** to debug app in **Docker** (for python) |
+| [Unity3D](./neovim/unity3d/README.md)        | How to setup **Neovim** to work with **Unity3D** like IDE         |
+| [Pyright](./neovim/lsp/pyright/README.md)    | How to setup Pyright for nvim                                     |
+| [Spell Check](./neovim/spellcheck/README.md) | How to config spell check in NeoVim                               |
+| [LSP](./neovim/lsp/platformio/README.md)     | How to configure platformio for lsp with NeoVim                   |
 
 ## Microcontrollers
 
