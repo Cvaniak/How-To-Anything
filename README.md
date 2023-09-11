@@ -21,8 +21,8 @@ setup plugin/tool.
 
 ### ESP Boards
 
-| Microcontroller                                                                   | Description of document |
-| --------------------------------------------------------------------------------- | ----------------------- |
+| Microcontroller                                                                          | Description of document |
+| ---------------------------------------------------------------------------------------- | ----------------------- |
 | [Esp32 Fire Beetle V4.0](./microcontrollers/esp/boards/esp32_fire_beetle/README.md)      |                         |
 | [Esp32s Nodemcu V1.1](./microcontrollers/esp/boards/esp32s_nodemcu_v1.1/README.md)       |                         |
 | [QtPy Esp32 S2](./microcontrollers/esp/boards/qtpy_esp32_s2/README.md)                   |                         |
@@ -41,30 +41,38 @@ setup plugin/tool.
 
 ### PlatformIO
 
-| File                                                     | Description of document                    |
-| -------------------------------------------------------- | ------------------------------------------ |
-| [Makefile](microcontrollers/platformio/Makefile.example) | Example of makefile for platformio project |
+| File                                                       | Description of document                    |
+| ---------------------------------------------------------- | ------------------------------------------ |
+| [Makefile](./microcontrollers/platformio/Makefile.example) | Example of makefile for platformio project |
 
 ### Sensors
 
-| Sensor                                                                            | Description of document           |
-| --------------------------------------------------------------------------------- | --------------------------------- |
-| [Accelerometer](microcontrollers/sensors/accelerometers/keyes_MMA8452Q/README.md) | Working library for accelerometer |
+| Sensor                                                                              | Description of document           |
+| ----------------------------------------------------------------------------------- | --------------------------------- |
+| [Accelerometer](./microcontrollers/sensors/accelerometers/keyes_MMA8452Q/README.md) | Working library for accelerometer |
 
 ## Linux
 
-| What                                              | Description of document              |
-| ------------------------------------------------- | ------------------------------------ |
-| [Printer](linux/manjaro/printer/README.md)        | Install printer and scanner          |
-| [Dual Output](linux/manjaro/dual_output/README.md) | How to enable dual output on Manjaro |
+| What                                                 | Description of document              |
+| ---------------------------------------------------- | ------------------------------------ |
+| [Printer](./linux/manjaro/printer/README.md)         | Install printer and scanner          |
+| [Dual Output](./linux/manjaro/dual_output/README.md) | How to enable dual output on Manjaro |
 
 ## Python
 
-| What                                | Description of document                |
-| ----------------------------------- | -------------------------------------- |
-| [Linters](python/linters/README.md) | Files with setup for linting in python |
+| What                                  | Description of document                |
+| ------------------------------------- | -------------------------------------- |
+| [Linters](./python/linters/README.md) | Files with setup for linting in python |
+
 ## Fritzing
 
 | What                             | Description of document    |
 | -------------------------------- | -------------------------- |
 | [Fritzing](./fritzing/README.md) | How to start with fritzing |
+
+### MQTT
+
+| File                                           | Description of document      |
+| ---------------------------------------------- | ---------------------------- |
+| [Mosquitto](./mqtt/mosquitto/README.md)        | How to run mosquitto         |
+| [Paho-mqtt](./mqtt/python/paho-mqtt/README.md) | How to connect via paho-mqtt |
