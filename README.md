@@ -76,3 +76,9 @@ setup plugin/tool.
 | ---------------------------------------------- | ---------------------------- |
 | [Mosquitto](./mqtt/mosquitto/README.md)        | How to run mosquitto         |
 | [Paho-mqtt](./mqtt/python/paho-mqtt/README.md) | How to connect via paho-mqtt |
+
+### MQTT
+
+| File                                     | Description of document                 |
+| ---------------------------------------- | --------------------------------------- |
+| [Git Profiles](./git/profiles/README.md) | How to setup git profiles per directory |
