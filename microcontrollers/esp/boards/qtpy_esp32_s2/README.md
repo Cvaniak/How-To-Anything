@@ -10,11 +10,9 @@
 ```ini
 [env:qtpy-esp32-s2]
 platform = 
-    https://github.com/Jason2866/platform-espressif32/releases/download/v2.0.3-rc1/platform-espressif32-2.0.3-rc1.zip
-board = qtpy-esp32-s2
+    https://github.com/platformio/platform-espressif32/archive/refs/tags/v6.6.0.zip
+board = adafruit_qtpy_esp32s2
 framework = arduino
-platform_packages =
-    framework-arduinoespressif32 @ https://github.com/Jason2866/arduino-esp32.git
 upload_speed = 921600
 monitor_speed = 115200
 monitor_filters = esp32_exception_decoder
